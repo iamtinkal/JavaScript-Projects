@@ -1,0 +1,30 @@
+body {
+    /* display: inline; */
+    /* font: 100; */
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: center; */
+    /* height: 100vh; */
+    /* margin: 0; */
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+
+}
+
+
+#clock {
+    display: inline;
+    font: 100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+}
