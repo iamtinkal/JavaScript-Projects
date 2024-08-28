@@ -9,6 +9,8 @@ let input = document.querySelector('#guessField')
 
 
 let sumbit = document.querySelector('#subt')
+const p = document.createElement('p');
+const startOver = document.querySelector('.resultParas');
 
 pending_guess = 10
 
@@ -16,7 +18,7 @@ play_game = true
 
 
 if (play_game) {
-    record_guess = []
+
     sumbit.addEventListener('click', function (e) {
         e.preventDefault();
         let guess = parseInt(input.value);
@@ -27,6 +29,7 @@ if (play_game) {
         if (guess === random_number) {
             alert("Congratulation! You Won!")
             endGame()
+
         }
         else if (guess < random_number) {
             document.querySelector(".lowOrHi").innerHTML = "Guess is too Low!"
@@ -62,39 +65,26 @@ function endGame() {
     play_game = false
     input.value = ''
     input.setAttribute('disabled', '')
-    document.querySelector('.guesses').innerHTML = ''
-    document.querySelector('.lastResult').innerHTML = 10
-    sumbit.value = 'Start A New Game'
-    sumbit.addEventListener('click', function (e) {
-        e.preventDefault()
+    p.classList.add('button');
+    p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+    startOver.appendChild(p);
+    play_game = false;
 
-        input.removeAttribute('disabled')
-
-
-
-        pending_guess = 10
-        record_guess = []
-        document.querySelector('.guesses').innerHTML = record_guess
-
-        // let input = document.querySelector('#guessField')
-
-
-
-
-
-        let sumbit = document.querySelector('#subt')
-        random_number = 70
-
-        play_game = true
-
-    })
+    new_game();
 }
 
-// //re-start the game
-// function start_game() {
-//     play_game = true
-//     input.removeAttribute('disabled')
-//     document.querySelector('.guesses').innerHTML = ''
-//     document.querySelector('.lastResult').innerHTML = 10
-// }
-// play_game = true
+
+function new_game() {
+    const newGameButton = document.querySelector('#newGame');
+    newGameButton.addEventListener('click', function (e) {
+        random_number = 70;
+        document.querySelector('.guesses').innerHTML = '';
+
+        input.value = ''
+        document.querySelector('.lastResult').innerHTML = 10;
+        input.removeAttribute('disabled');
+        startOver.removeChild(p);
+        record_guess = []
+        play_game = true;
+    });
+}
