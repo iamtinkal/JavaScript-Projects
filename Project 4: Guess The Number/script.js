@@ -14,11 +14,15 @@ pending_guess = 10
 
 play_game = true
 
+
 if (play_game) {
+    record_guess = []
     sumbit.addEventListener('click', function (e) {
         e.preventDefault();
         let guess = parseInt(input.value);
         // input = parseInt(document.querySelector('#guessField').value)
+
+
 
         if (guess === random_number) {
             alert("Congratulation! You Won!")
@@ -45,19 +49,52 @@ if (play_game) {
                 alert("You Lost!")
             }
         }
-        else { endGame() }
+
 
     })
 }
 
-//end game
+
+
+
+// //end game
 function endGame() {
+    play_game = false
     input.value = ''
     input.setAttribute('disabled', '')
-    pending_guess = 10
-    record_guess = []
-    play_game = false
+    document.querySelector('.guesses').innerHTML = ''
+    document.querySelector('.lastResult').innerHTML = 10
+    sumbit.value = 'Start A New Game'
+    sumbit.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        input.removeAttribute('disabled')
 
 
 
+        pending_guess = 10
+        record_guess = []
+        document.querySelector('.guesses').innerHTML = record_guess
+
+        // let input = document.querySelector('#guessField')
+
+
+
+
+
+        let sumbit = document.querySelector('#subt')
+        random_number = 70
+
+        play_game = true
+
+    })
 }
+
+// //re-start the game
+// function start_game() {
+//     play_game = true
+//     input.removeAttribute('disabled')
+//     document.querySelector('.guesses').innerHTML = ''
+//     document.querySelector('.lastResult').innerHTML = 10
+// }
+// play_game = true
