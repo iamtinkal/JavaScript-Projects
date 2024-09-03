@@ -10,11 +10,9 @@ const HexChange = function () {
         hex += colorRange[Math.floor(Math.random() * 16)]
     }
     // console.log(hex);
-
     return hex
 
 }
-
 
 let IntervalID
 const changeColor = function () {
