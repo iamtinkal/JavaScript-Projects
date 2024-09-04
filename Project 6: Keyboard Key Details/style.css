@@ -1,0 +1,35 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #212121;
+    /* align-items: center; */
+    
+    
+}
+#heading{
+    color: white;
+    align-items: center;
+    text-align: center;
+    /* margin: 20%; */
+    margin-top: 20%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#key{
+    color: white;
+    /* align-items: center; */
+    /* text-align: center; */
+    /* margin: 20%; */
+}
+
+#table{
+    border: 1px solid white;
+    align-items: center;
+    margin-left: 40%;
+    border-collapse: collapse;
+    background-color: #D6EEEE;
+    color: black;
+    /* text-align: center; */
+}
