@@ -24,12 +24,13 @@ body{
     /* margin: 20%; */
 }
 
-#table{
-    border: 1px solid white;
+#table, th, td{
+    border: 2px solid black;
     align-items: center;
     margin-left: 40%;
     border-collapse: collapse;
     background-color: #D6EEEE;
     color: black;
-    /* text-align: center; */
+    text-align: center;
+    width: 20%;
 }
